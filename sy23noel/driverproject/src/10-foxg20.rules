@@ -1,0 +1,1 @@
+KERNEL=="foxg20" , SYMLINK+="fox00", MODE="0666"

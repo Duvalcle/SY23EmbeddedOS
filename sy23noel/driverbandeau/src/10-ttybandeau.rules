@@ -1,0 +1,1 @@
+KERNEL=="ttybandeau" , SYMLINK+="ttyB0", MODE="0666"
