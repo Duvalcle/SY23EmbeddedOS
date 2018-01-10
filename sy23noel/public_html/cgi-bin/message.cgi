@@ -1,8 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
 TTY=/dev/ttyB0
-#TTY=/dev/stdout
+#TTY=/dev/ttyS1
 
+urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
 # programme à compléter
 # insérer la aprtie de gestion du bandeau connecté à TTY
@@ -28,12 +29,18 @@ if [ ${REQUEST_METHOD} = "GET" ]
    then
        messageaffichage=${QUERY_STRING}
     else
-      messageaffichage="Technologies Mobiles et Systèmes Embarqués"  
-   fi 
+      messageaffichage="Technologies Mobiles et Systèmes Embarqués"
+   fi
    echo "<p>Message envoyé : ${messageaffichage}</p>"
+   param1=${messageaffichage%%&*}
+   echo "<p>param1  : ${param1}</p>"
+   param2=${messageaffichage##*&}
+   echo "<p>param2  : ${param2}</p>"
+   echo "[00\V01\X${param2#*=}<$(urldecode ${param1#*=})>]" > $TTY
+   #echo "<p>$(cat $TTY)</p>"
  else
    echo "<p>Erreur methode : POST</p>"
-fi 
+fi
 
 echo "</body>"
 echo "</html>"
