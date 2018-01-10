@@ -1,0 +1,65 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO8859-1">
+<title>Message</title>
+</head>
+<script language="javascript1.2">
+<!--
+
+function Inserer(valeur) {
+ document.forme.message.value = valeur;
+ document.forme.effet.value = "sl";
+ document.getElementById('radiosl').checked = true;
+}
+
+//-->
+</script>
+<body bgcolor="#0000000" background="images/bougie-banques-d-images-photos-gratuites-libres-de-droits.jpg" text="#FFFFFF">
+<h1 align="center">Technologies Mobiles et Syst�mes Embarqu�s</h1>
+<h2 align="center">Gestion du bandeau</h2>
+<form action="/cgi-bin/message.cgi" name="forme">
+<table border="0" align="center" width="50%">
+<tr>
+<td  align="center" width="100%"></td>
+</tr>
+<tr>
+<td  align="center" width="100%">Message : <input type="text" name="message" size="80" maxlength="100"></td>
+</tr>
+<tr>
+<td align="center"><input type="submit" value="Envoyer"> <input type="reset" value="Effacer tout"><input type="button" name="defaut" value="message par d�faut" onclick="Inserer('TMSE TMSE TMSE !!!!!!')"></td>
+</tr>
+</table>
+<h2 align="center">Effets sp�ciaux</h2>
+<table align="center">
+<tr>
+<td><input type="radio" name="effet" value="jp"></td><td>Saut</td>
+<td><input type="radio" name="effet" value="sp"></td><td>Etoile</td>
+</tr>
+<tr>
+<td><input type="radio" name="effet" value="ru"></td><td>Vertical haut</td>
+<td><input type="radio" name="effet" value="rd"></td><td>Vertical bas</td>
+</tr>
+<tr>
+<td><input type="radio" name="effet" value="pl"></td><td>Le nouveau texte pousse l'ancien ver la gauche en d�filant</td>
+<td><input type="radio" name="effet" value="pr"></td><td>Le nouveau texte pousse l'ancien ver la droite en d�filant</td>
+</tr>
+<tr>
+<td><input type="radio" name="effet" value="ul"></td><td>D�couvre de gauche � droite</td>
+<td><input type="radio" name="effet" value="ur"></td><td>D�couvre de droite � gauche</td>
+</tr>
+<tr>
+<td><input type="radio" name="effet" value="uc"></td><td>D�couvre du centre vers les c�t�s</td>
+<td><input type="radio" name="effet" value="ue"></td><td>D�couvre des c�t�s vers le centre</td>
+</tr>
+<tr>
+<td><input id="radiosl" type="radio" name="effet" value="sl" checked ></td><td>D�file vers la gauche</td>
+<td><input type="radio" name="effet" value="sr"></td><td>D�file vers la droite</td>
+</tr>
+<tr>
+<td><input type="radio" name="effet" value="sh"></td><td>Shoot</td>
+<td><input type="radio" name="effet" value="??"></td><td>Effet diff�rent � chaque apparition</td>
+</tr>
+</table>
+</form>
+</body>
+</html>
