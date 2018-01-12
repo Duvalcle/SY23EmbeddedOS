@@ -1,1 +1,0 @@
-cmd_/home/uvs/SY23EmbeddedOS/sy23noel/driverproject/driverLED/driverLED.ko := ld -r -m elf_i386 -T /opt/linux-source-2.6.32/scripts/module-common.lds --build-id -o /home/uvs/SY23EmbeddedOS/sy23noel/driverproject/driverLED/driverLED.ko /home/uvs/SY23EmbeddedOS/sy23noel/driverproject/driverLED/driverLED.o /home/uvs/SY23EmbeddedOS/sy23noel/driverproject/driverLED/driverLED.mod.o
