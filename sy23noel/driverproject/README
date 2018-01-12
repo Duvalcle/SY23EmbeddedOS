@@ -1,0 +1,24 @@
+dans ce répertoire
+créer un nouveau projet (par exemple) 
+./newproject.sh mondriver
+
+dans le répertoire du nouveau driver (ex mondriver) :
+compléter les sources du driver.
+make
+ne pas oublier  de crérer l'inode pour le driver écrit.
+
+pour tester le driver, en root :
+insmod ../driversimfox/driverfox.ko
+insmod ./mondriver.ko
+
+tester le driver :
+
+si le driver est en sortie :
+echo "votre valeur" > driver
+cat /dev/foxg20
+pour afficher le résultat envoyé
+
+si le driver est en entrée :
+echo "XXXXXXXX" > /dev/foxg20
+cat driver
+pour afficher le résultat reçu
