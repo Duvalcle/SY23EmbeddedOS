@@ -1,18 +1,13 @@
 #!/bin/bash
 
 TTY=/dev/ttyB0
-#TTY=/dev/ttyS1
 
+#fonction pour transformer les espace et les caractere speciaux.
 urldecode() { : "${*//+/ }"; echo -e "${_//%/\\x}"; }
 
-# programme à compléter
-# insérer la aprtie de gestion du bandeau connecté à TTY
-# en simulation le message envoyé sera accessible avec
-# cat /dev/ttyB0
-
+#header de la page html
 cat << EOFHEADER
 Content-type: text/html
-
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -31,13 +26,17 @@ if [ ${REQUEST_METHOD} = "GET" ]
     else
       messageaffichage="Technologies Mobiles et Systèmes Embarqués"
    fi
+   #debut du traitement de la chaine de caractere
    echo "<p>Message envoyé : ${messageaffichage}</p>"
+
+   #separation des variables
    param1=${messageaffichage%%&*}
    echo "<p>param1  : ${param1}</p>"
    param2=${messageaffichage##*&}
    echo "<p>param2  : ${param2}</p>"
+
+   #ecriture de la trame vers le driver
    echo "[00\V01\X${param2#*=}<$(urldecode ${param1#*=})>]" > $TTY
-   #echo "<p>$(cat $TTY)</p>"
  else
    echo "<p>Erreur methode : POST</p>"
 fi
